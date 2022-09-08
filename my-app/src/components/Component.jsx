@@ -25,7 +25,10 @@ class Component extends React.Component{
             return {
                 id: state.id + 1,
                 count: state.count  + 1,
-                itemsLog:[ {id: state.id + 1, count: state.count + 1} , ...this.state.itemsLog]
+                itemsLog:[
+                    {id: state.id + 1, count: state.count + 1},
+                    ...this.state.itemsLog
+                ]
             }
         });
     }
@@ -36,7 +39,10 @@ class Component extends React.Component{
             return {
                 id: state.id + 1,
                 count: state.count  - 1,
-                itemsLog:[ {id: state.id + 1, count: state.count - 1} , ...this.state.itemsLog]
+                itemsLog:[
+                    {id: state.id + 1, count: state.count - 1},
+                    ...this.state.itemsLog
+                ]
             }
         });
     }
@@ -46,13 +52,24 @@ class Component extends React.Component{
         return(
             <div>
                 <div className="btn-group font-monospace" role="group">
-                    <button onClick={this.addCount} type="button" className="btn btn-outline-success">+</button>
-                    <button onClick={this.minCount} type="button" className="btn btn-outline-danger">-</button>
+                    <button onClick={this.addCount}
+                            type="button"
+                            className="btn btn-outline-success"
+                    >+</button>
+
+                    <button onClick={this.minCount}
+                            type="button"
+                            className="btn btn-outline-danger"
+                    >-</button>
                 </div>
 
                 <div className="list-group">
                     {this.state.itemsLog.map((item) => (
-                        <button onClick={this.handleRemove(item.id)} value={item.id} type="button" className="list-group-item list-group-item-action">{item.count}</button>
+                        <button onClick={this.handleRemove(item.id)}
+                                value={item.id}
+                                type="button"
+                                className="list-group-item list-group-item-action"
+                        >{item.count}</button>
                     ))}
                 </div>
 

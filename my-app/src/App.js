@@ -1,4 +1,3 @@
-import './index.css';
 import Component from "./components/Component";
 
 
